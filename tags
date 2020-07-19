@@ -1,0 +1,183 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+BALL_H	src/objects/ball.h	/^#define BALL_H$/;"	d
+BALL_MAX_VEL	src/objects/ball.c	/^#define BALL_MAX_VEL /;"	d	file:
+BOTTOM	src/logic/collision.h	/^	BOTTOM = 4$/;"	e	enum:SIDE
+Ball	src/objects/ball.h	/^typedef struct Ball$/;"	s
+Ball	src/objects/ball.h	/^} Ball;$/;"	t	typeref:struct:Ball
+CC	makefile	/^CC=gcc$/;"	m
+CFILES	makefile	/^CFILES=$(wildcard src\/main\/*.c)\\$/;"	m
+CFLAGS	makefile	/^CFLAGS=-I.\/src\/main\/ -I.\/src\/objects\/ -I.\/src\/logic\/ -I.\/src\/error\/ -I\/usr\/include/;"	m
+COLLISION_H	src/logic/collision.h	/^#define COLLISION_H$/;"	d
+ERROR_H	src/error/error.h	/^#define ERROR_H$/;"	d
+Hitbox	src/logic/collision.h	/^typedef struct Hitbox {$/;"	s
+Hitbox	src/logic/collision.h	/^} Hitbox;$/;"	t	typeref:struct:Hitbox
+LEFT	src/logic/collision.h	/^	LEFT = 1,$/;"	e	enum:SIDE
+MAP_H	src/objects/map.h	/^#define MAP_H$/;"	d
+MAP_HEIGHT	src/objects/map.c	/^#define MAP_HEIGHT /;"	d	file:
+MAP_LENGTH	src/objects/map.c	/^#define MAP_LENGTH /;"	d	file:
+NO_SIDE	src/logic/collision.h	/^	NO_SIDE = 0,$/;"	e	enum:SIDE
+NUM_BALLS	src/objects/ball.c	/^#define NUM_BALLS /;"	d	file:
+NUM_OBJS	src/objects/objects.h	/^#define NUM_OBJS /;"	d
+NUM_PLAYERS	src/objects/player.c	/^#define NUM_PLAYERS /;"	d	file:
+OBJECTS_H	src/objects/objects.h	/^#define OBJECTS_H$/;"	d
+Obj	src/objects/objects.h	/^typedef struct Obj$/;"	s
+Obj	src/objects/objects.h	/^} Obj;$/;"	t	typeref:struct:Obj
+PHYSICS_H	src/logic/physics.h	/^#define PHYSICS_H$/;"	d
+PLAYER_FRICTION	src/objects/player.c	/^#define PLAYER_FRICTION /;"	d	file:
+PLAYER_H	src/objects/player.h	/^#define PLAYER_H$/;"	d
+Player	src/objects/player.h	/^typedef struct Player$/;"	s
+Player	src/objects/player.h	/^} Player;$/;"	t	typeref:struct:Player
+RAY_H	src/logic/ray.h	/^#define RAY_H$/;"	d
+RIGHT	src/logic/collision.h	/^	RIGHT = 2,$/;"	e	enum:SIDE
+Ray	src/logic/ray.h	/^typedef struct Ray $/;"	s
+Ray	src/logic/ray.h	/^} Ray;$/;"	t	typeref:struct:Ray
+SCALE	src/main/common.h	/^#define SCALE /;"	d
+SCALE	src/main/main.c	/^#define SCALE /;"	d	file:
+SCREEN_HEIGHT	src/main/common.h	/^#define SCREEN_HEIGHT /;"	d
+SCREEN_HEIGHT	src/main/main.c	/^#define SCREEN_HEIGHT /;"	d	file:
+SCREEN_LENGTH	src/main/common.h	/^#define SCREEN_LENGTH /;"	d
+SCREEN_LENGTH	src/main/main.c	/^#define SCREEN_LENGTH /;"	d	file:
+SIDE	src/logic/collision.h	/^typedef enum SIDE {$/;"	g
+SIDE	src/logic/collision.h	/^} SIDE;$/;"	t	typeref:enum:SIDE
+TILE_SIZE	src/objects/map.c	/^#define TILE_SIZE /;"	d	file:
+TOP	src/logic/collision.h	/^	TOP = 3,$/;"	e	enum:SIDE
+UI_H	src/main/ui.h	/^#define UI_H$/;"	d
+VECTOR_H	src/logic/vector.h	/^#define VECTOR_H$/;"	d
+Vector2	src/logic/vector.h	/^typedef struct Vector2 $/;"	s
+Vector2	src/logic/vector.h	/^} Vector2;$/;"	t	typeref:struct:Vector2
+WALLS_H	src/objects/walls.h	/^#define WALLS_H$/;"	d
+__anone693807f0108	src/main/ui.c	/^{$/;"	s	file:
+__anone693807f0208	src/main/ui.c	/^	{$/;"	s	struct:__anone693807f0108	file:
+apply_friction	src/logic/physics.c	/^void apply_friction(Vector2* vel, double friction)$/;"	f	typeref:typename:void
+apply_velocity	src/logic/physics.c	/^void apply_velocity(Hitbox* hb, Vector2 vel)$/;"	f	typeref:typename:void
+ball_handle_collisions	src/objects/ball.c	/^void ball_handle_collisions(Ball* b)$/;"	f	typeref:typename:void
+ball_serve	src/objects/ball.c	/^void ball_serve(Ball* b)$/;"	f	typeref:typename:void
+balls	src/objects/ball.c	/^static Ball balls[NUM_BALLS];$/;"	v	typeref:typename:Ball[]	file:
+bottom	src/logic/collision.h	/^	int bottom;$/;"	m	struct:Hitbox	typeref:typename:int
+bounce	src/logic/physics.c	/^void bounce(Vector2* avel, Vector2* bvel, SIDE side, double multiplier)$/;"	f	typeref:typename:void
+bounce_off_paddle	src/objects/ball.c	/^void bounce_off_paddle(Hitbox b, Hitbox p, Vector2* vel, SIDE side)$/;"	f	typeref:typename:void
+calculacte_fps	src/main/main.c	/^int calculacte_fps(int num_frames, int start_time)$/;"	f	typeref:typename:int
+check_error	src/error/error.c	/^void check_error(int val, char* msg)$/;"	f	typeref:typename:void
+check_null	src/error/error.c	/^void check_null(void* val, char* msg)$/;"	f	typeref:typename:void
+check_player_wins	src/main/ui.c	/^int check_player_wins()$/;"	f	typeref:typename:int
+close_stuff	src/main/main.c	/^void close_stuff(SDL_Window* window, SDL_Renderer* renderer)$/;"	f	typeref:typename:void
+collides	src/logic/collision.c	/^bool collides(Hitbox a, Hitbox b)$/;"	f	typeref:typename:bool
+collides_with_bottom_edge	src/logic/collision.c	/^bool collides_with_bottom_edge(Hitbox hb)$/;"	f	typeref:typename:bool
+collides_with_edge	src/logic/collision.c	/^bool collides_with_edge(Hitbox hb)$/;"	f	typeref:typename:bool
+collides_with_left_edge	src/logic/collision.c	/^bool collides_with_left_edge(Hitbox hb)$/;"	f	typeref:typename:bool
+collides_with_obj	src/objects/objects.c	/^Obj* collides_with_obj(Hitbox hb, Obj* objs)$/;"	f	typeref:typename:Obj *
+collides_with_player	src/objects/player.c	/^bool collides_with_player(Hitbox hb, Player** player)$/;"	f	typeref:typename:bool
+collides_with_right_edge	src/logic/collision.c	/^bool collides_with_right_edge(Hitbox hb)$/;"	f	typeref:typename:bool
+collides_with_top_edge	src/logic/collision.c	/^bool collides_with_top_edge(Hitbox hb)$/;"	f	typeref:typename:bool
+collides_with_wall	src/objects/walls.c	/^bool collides_with_wall(Hitbox hb, Obj** wall)$/;"	f	typeref:typename:bool
+contact	src/logic/collision.h	/^struct contact$/;"	s
+contact	src/logic/collision.h	/^} contact;$/;"	v	typeref:struct:contact
+dir	src/objects/player.h	/^	double dir;$/;"	m	struct:Player	typeref:typename:double
+draw_balls	src/objects/ball.c	/^void draw_balls(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
+draw_obj	src/objects/objects.c	/^void draw_obj(SDL_Renderer* renderer, Obj obj)$/;"	f	typeref:typename:void
+draw_objs	src/objects/objects.c	/^void draw_objs(SDL_Renderer* renderer, Obj* objs)$/;"	f	typeref:typename:void
+draw_players	src/objects/player.c	/^void draw_players(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
+draw_ray	src/logic/ray.c	/^bool draw_ray(SDL_Renderer* renderer, Ray r)$/;"	f	typeref:typename:bool
+draw_text	src/main/main.c	/^void draw_text(SDL_Renderer* renderer, char* text, TTF_Font* font)$/;"	f	typeref:typename:void
+draw_ui	src/main/ui.c	/^void draw_ui(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
+draw_walls	src/objects/walls.c	/^void draw_walls(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
+font	src/main/ui.c	/^	TTF_Font* font;$/;"	m	struct:__anone693807f0108	typeref:typename:TTF_Font *	file:
+generate_map	src/objects/map.c	/^Obj* generate_map(int map[])$/;"	f	typeref:typename:Obj *
+get_balls	src/objects/ball.c	/^Ball* get_balls()$/;"	f	typeref:typename:Ball *
+get_mid_point	src/main/common.c	/^int get_mid_point(int a, int b)$/;"	f	typeref:typename:int
+get_midpoint	src/logic/vector.c	/^Vector2 get_midpoint(SDL_Rect r)$/;"	f	typeref:typename:Vector2
+get_player1	src/objects/player.c	/^Player* get_player1()$/;"	f	typeref:typename:Player *
+get_player2	src/objects/player.c	/^Player* get_player2()$/;"	f	typeref:typename:Player *
+get_players	src/objects/player.c	/^Player* get_players()$/;"	f	typeref:typename:Player *
+get_walls	src/objects/walls.c	/^Obj* get_walls()$/;"	f	typeref:typename:Obj *
+handle_player_input	src/objects/player.c	/^void handle_player_input(Player* p)$/;"	f	typeref:typename:void
+hb	src/logic/collision.h	/^	Hitbox hb; $/;"	m	struct:contact	typeref:typename:Hitbox
+hb	src/objects/ball.h	/^	Hitbox hb;$/;"	m	struct:Ball	typeref:typename:Hitbox
+hb	src/objects/objects.h	/^	Hitbox hb;$/;"	m	struct:Obj	typeref:typename:Hitbox
+hb	src/objects/player.h	/^	Hitbox hb;$/;"	m	struct:Player	typeref:typename:Hitbox
+hitbox_to_SDLRect	src/logic/collision.c	/^SDL_Rect hitbox_to_SDLRect(Hitbox hb)$/;"	f	typeref:typename:SDL_Rect
+increment_p1_score	src/main/ui.c	/^void increment_p1_score()$/;"	f	typeref:typename:void
+increment_p2_score	src/main/ui.c	/^void increment_p2_score()$/;"	f	typeref:typename:void
+init	src/main/main.c	/^bool init(SDL_Window** window, SDL_Renderer** renderer)$/;"	f	typeref:typename:bool
+init_balls	src/objects/ball.c	/^void init_balls(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
+init_hitbox	src/logic/collision.c	/^Hitbox init_hitbox(int x, int y, int w, int h)$/;"	f	typeref:typename:Hitbox
+init_players	src/objects/player.c	/^void init_players(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
+init_ray	src/logic/ray.c	/^Ray init_ray(double x1, double y1, double x2, double y2)$/;"	f	typeref:typename:Ray
+init_score	src/main/ui.c	/^void init_score(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
+init_ui	src/main/ui.c	/^void init_ui(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
+init_walls	src/objects/walls.c	/^void init_walls(int amount)$/;"	f	typeref:typename:void
+left	src/logic/collision.h	/^	int left;$/;"	m	struct:Hitbox	typeref:typename:int
+limit_velocity	src/logic/physics.c	/^void limit_velocity(Vector2* vel, double limit)$/;"	f	typeref:typename:void
+logo	src/main/ui.c	/^	SDL_Texture* logo;$/;"	m	struct:__anone693807f0108	typeref:typename:SDL_Texture *	file:
+main	src/main/main.c	/^int main(int argc, char** argv)$/;"	f	typeref:typename:int
+map	src/objects/map.c	/^int map[MAP_LENGTH * MAP_HEIGHT] = {$/;"	v	typeref:typename:int[]
+max	src/main/common.c	/^int max(int a, int b)$/;"	f	typeref:typename:int
+modulo	src/main/common.c	/^double modulo(double a, double b)$/;"	f	typeref:typename:double
+move_hitbox	src/logic/collision.c	/^void move_hitbox(Hitbox* hb, int dx, int dy)$/;"	f	typeref:typename:void
+obj	makefile	/^obj=$(CFILES:.c=.o)$/;"	m
+p1	src/logic/ray.h	/^	Vector2 p1;$/;"	m	struct:Ray	typeref:typename:Vector2
+p1_pos	src/main/ui.c	/^		SDL_Rect p1_pos;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:SDL_Rect	file:
+p1_score	src/main/ui.c	/^		int p1_score;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:int	file:
+p1_score	src/main/ui.c	/^static int p1_score = 0;$/;"	v	typeref:typename:int	file:
+p1_text	src/main/ui.c	/^		char p1_text[4];$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:char[4]	file:
+p1_texture	src/main/ui.c	/^		SDL_Texture* p1_texture;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:SDL_Texture *	file:
+p2	src/logic/ray.h	/^	Vector2 p2;$/;"	m	struct:Ray	typeref:typename:Vector2
+p2_pos	src/main/ui.c	/^		SDL_Rect p2_pos;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:SDL_Rect	file:
+p2_score	src/main/ui.c	/^		int p2_score;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:int	file:
+p2_score	src/main/ui.c	/^static int p2_score = 0;$/;"	v	typeref:typename:int	file:
+p2_text	src/main/ui.c	/^		char p2_text[4];$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:char[4]	file:
+p2_texture	src/main/ui.c	/^		SDL_Texture* p2_texture;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:SDL_Texture *	file:
+player_add_velocity	src/objects/player.c	/^void player_add_velocity(Player* p, double magnitude)$/;"	f	typeref:typename:void
+player_handle_collisions	src/objects/player.c	/^void player_handle_collisions(Player* p)$/;"	f	typeref:typename:void
+players	src/objects/player.c	/^static Player players[NUM_PLAYERS];$/;"	v	typeref:typename:Player[]	file:
+pong	makefile	/^pong: $(obj)$/;"	t
+pos	src/objects/ball.h	/^	Vector2 pos;$/;"	m	struct:Ball	typeref:typename:Vector2
+pos	src/objects/player.h	/^	Vector2 pos;$/;"	m	struct:Player	typeref:typename:Vector2
+prev_hb	src/objects/ball.h	/^	Hitbox prev_hb;$/;"	m	struct:Ball	typeref:typename:Hitbox
+prev_hb	src/objects/player.h	/^	Hitbox prev_hb;$/;"	m	struct:Player	typeref:typename:Hitbox
+print_error	src/error/error.c	/^void print_error(char* msg)$/;"	f	typeref:typename:void
+print_hitbox	src/logic/collision.c	/^void print_hitbox(Hitbox hb, char* name)$/;"	f	typeref:typename:void
+quit	src/main/main.c	/^bool quit()$/;"	f	typeref:typename:bool
+rays	src/objects/player.c	/^static Ray rays[1];$/;"	v	typeref:typename:Ray[1]	file:
+rays_intersect	src/logic/ray.c	/^bool rays_intersect(Ray r1, Ray r2)$/;"	f	typeref:typename:bool
+renderer	src/main/ui.c	/^	SDL_Renderer* renderer;$/;"	m	struct:__anone693807f0108	typeref:typename:SDL_Renderer *	file:
+resolve_collision	src/logic/collision.c	/^SIDE resolve_collision(Vector2* apos, Hitbox* recta, Hitbox recta_prev, Hitbox rectb, Hitbox rec/;"	f	typeref:typename:SIDE
+resolve_edge_collision	src/logic/collision.c	/^SIDE resolve_edge_collision(Vector2* pos, Hitbox* hb)$/;"	f	typeref:typename:SIDE
+right	src/logic/collision.h	/^	int right;$/;"	m	struct:Hitbox	typeref:typename:int
+score	src/main/ui.c	/^	} score;$/;"	m	struct:__anone693807f0108	typeref:struct:__anone693807f0108::__anone693807f0208	file:
+set_hitbox	src/logic/collision.c	/^void set_hitbox(Hitbox* hb, int x, int y)$/;"	f	typeref:typename:void
+side	src/logic/collision.h	/^	SIDE side; $/;"	m	struct:contact	typeref:typename:SIDE
+texture	src/objects/ball.h	/^	SDL_Texture* texture;$/;"	m	struct:Ball	typeref:typename:SDL_Texture *
+texture	src/objects/objects.h	/^	SDL_Texture* texture;$/;"	m	struct:Obj	typeref:typename:SDL_Texture *
+texture	src/objects/player.h	/^	SDL_Texture* texture;$/;"	m	struct:Player	typeref:typename:SDL_Texture *
+top	src/logic/collision.h	/^	int top;$/;"	m	struct:Hitbox	typeref:typename:int
+ui	src/main/ui.c	/^} ui;$/;"	v	typeref:struct:__anone693807f0108
+update_ball	src/objects/ball.c	/^void update_ball(Ball* b)$/;"	f	typeref:typename:void
+update_player	src/objects/player.c	/^void update_player(Player* p)$/;"	f	typeref:typename:void
+update_score	src/main/ui.c	/^void update_score()$/;"	f	typeref:typename:void
+vector_add	src/logic/vector.c	/^Vector2 vector_add(Vector2 v1, Vector2 v2)$/;"	f	typeref:typename:Vector2
+vector_add_magnitude	src/logic/vector.c	/^Vector2 vector_add_magnitude(Vector2 v, double amount)$/;"	f	typeref:typename:Vector2
+vector_cross	src/logic/vector.c	/^double vector_cross(Vector2 v1, Vector2 v2)$/;"	f	typeref:typename:double
+vector_dot	src/logic/vector.c	/^double vector_dot(Vector2 v1, Vector2 v2)$/;"	f	typeref:typename:double
+vector_get_dir	src/logic/vector.c	/^double vector_get_dir(Vector2 v)$/;"	f	typeref:typename:double
+vector_get_magnitude	src/logic/vector.c	/^double vector_get_magnitude(Vector2 v)$/;"	f	typeref:typename:double
+vector_rotate	src/logic/vector.c	/^Vector2 vector_rotate(Vector2 v, double deg)$/;"	f	typeref:typename:Vector2
+vector_scale	src/logic/vector.c	/^Vector2 vector_scale(Vector2 v, double scalar)$/;"	f	typeref:typename:Vector2
+vector_set_dir	src/logic/vector.c	/^Vector2 vector_set_dir(Vector2 v, double deg)$/;"	f	typeref:typename:Vector2
+vector_set_magnitude	src/logic/vector.c	/^Vector2 vector_set_magnitude(Vector2 v, double length)$/;"	f	typeref:typename:Vector2
+vector_sub	src/logic/vector.c	/^Vector2 vector_sub(Vector2 v1, Vector2 v2)$/;"	f	typeref:typename:Vector2
+vel	src/objects/ball.h	/^	Vector2 vel;$/;"	m	struct:Ball	typeref:typename:Vector2
+vel	src/objects/player.h	/^	Vector2 vel;$/;"	m	struct:Player	typeref:typename:Vector2
+walls	src/objects/walls.c	/^static Obj* walls = NULL;$/;"	v	typeref:typename:Obj *	file:
+wins_pos	src/main/ui.c	/^		SDL_Rect wins_pos;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:SDL_Rect	file:
+wins_text	src/main/ui.c	/^		char wins_text[32];$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:char[32]	file:
+wins_texture	src/main/ui.c	/^		SDL_Texture* wins_texture;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:SDL_Texture *	file:
+x	src/logic/vector.h	/^	double x;$/;"	m	struct:Vector2	typeref:typename:double
+y	src/logic/vector.h	/^	double y;$/;"	m	struct:Vector2	typeref:typename:double
