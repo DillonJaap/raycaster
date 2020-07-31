@@ -13,23 +13,19 @@ typedef enum SIDE {
 	BOTTOM = 4
 } SIDE;
 
-typedef struct Hitbox {
+typedef struct Hitbox 
+{
 	int top;
 	int bottom;
 	int left;
 	int right;
 } Hitbox;
 
-struct contact
+typedef struct Contact
 {
-	// which side did it collide from (NONE if no collision occured)
-	SIDE side; 
-	// hitbox that the player collided with
-	Hitbox hb; 
-} contact;
-
-Hitbox init_hitbox(int x, int y, int w, int h);
-SDL_Rect hitbox_to_SDLRect(Hitbox hb);
+	SIDE side; // which side did it collide from (NONE if no collision occured)
+	Hitbox hb; // hitbox that the player collided with
+} Contact;
 
 Hitbox init_hitbox(int x, int y, int w, int h);
 void print_hitbox(Hitbox hb, char* name);
@@ -37,12 +33,14 @@ SDL_Rect hitbox_to_SDLRect(Hitbox hb);
 void move_hitbox(Hitbox* hb, int dx, int dy);
 void set_hitbox(Hitbox* hb, int x, int y);
 bool collides(Hitbox a, Hitbox b);
+Contact get_contact(Hitbox hb, Hitbox hb_prev, Hitbox hbs[], Hitbox hbs_prev[], size_t len);
+SIDE collides_on_side(Hitbox recta, Hitbox recta_prev, Hitbox rectb, Hitbox rectb_prev);
 bool collides_with_edge(Hitbox hb);
 bool collides_with_right_edge(Hitbox hb);
 bool collides_with_left_edge(Hitbox hb);
 bool collides_with_bottom_edge(Hitbox hb);
 bool collides_with_top_edge(Hitbox hb);
-SIDE resolve_collision(Vector2* apos, Hitbox* recta, Hitbox recta_prev, Hitbox rectb, Hitbox rectb_prev);
+void resolve_collision(Vector2* apos, Hitbox recta, Hitbox rectb, SIDE side);
 SIDE resolve_edge_collision(Vector2* pos, Hitbox* hb);
 
 #endif

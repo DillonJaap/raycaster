@@ -12,12 +12,10 @@
 typedef struct Walls
 {
 	int amount;
-	Hitbox hb[MAX_WALLS];
+	Hitbox hbs[];
 } Walls;
 
-Walls* get_walls();
-void init_walls(int amount);
-bool collides_with_wall(Hitbox hb, Obj** wall);
-void draw_walls(SDL_Renderer* renderer);
+Walls* init_walls(int amount);
+void draw_walls(SDL_Renderer* renderer, Walls* walls, int amount);
 
 #endif

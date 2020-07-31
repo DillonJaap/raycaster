@@ -7,9 +7,9 @@
 #include "objects.h"
 #include "walls.h"
 #include "player.h"
-#include "ball.h"
 #include "error.h"
 #include "common.h"
+#include "map.h"
 #include "ui.h"
 
 #define SCALE 1
@@ -80,6 +80,19 @@ int calculacte_fps(int num_frames, int start_time)
 	return num_frames / ((SDL_GetTicks() - start_time) / 1000.f);
 }
 
+int map[MAP_LENGTH * MAP_HEIGHT] = {
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+	1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+	1, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+	1, 0, 0, 1, 1, 0, 0, 0, 0, 1,
+	1, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+	1, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+	1, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+	1, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+};
+
 int main(int argc, char** argv)
 {
 	// create window and renderer
@@ -92,6 +105,7 @@ int main(int argc, char** argv)
 
 	init_players(renderer);
 	Player* p1 = get_player1();
+	Walls* walls = generate_map(map);
 
 	char time_str[100] = "0";
 
@@ -107,12 +121,20 @@ int main(int argc, char** argv)
 		// move objects
 		update_player(p1);
 
+		// handle collisions
+		{
+			// TODO: remove magic number
+			p1->contact = get_contact(p1->hb, p1->prev_hb, walls->hbs, walls->hbs, 100); 
+		}
+
+
 		// clear screen
 		SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0x00);
 		SDL_RenderClear(renderer);
 
 		// draw various game objects and text
 		draw_players(renderer);
+		draw_walls(renderer, walls, 100);
 
 		// update screen
 		SDL_RenderPresent(renderer);

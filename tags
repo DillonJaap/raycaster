@@ -15,13 +15,16 @@ CC	makefile	/^CC=gcc$/;"	m
 CFILES	makefile	/^CFILES=$(wildcard src\/main\/*.c)\\$/;"	m
 CFLAGS	makefile	/^CFLAGS=-I.\/src\/main\/ -I.\/src\/objects\/ -I.\/src\/logic\/ -I.\/src\/error\/ -I\/usr\/include/;"	m
 COLLISION_H	src/logic/collision.h	/^#define COLLISION_H$/;"	d
+Contact	src/logic/collision.h	/^typedef struct Contact$/;"	s
+Contact	src/logic/collision.h	/^} Contact;$/;"	t	typeref:struct:Contact
 ERROR_H	src/error/error.h	/^#define ERROR_H$/;"	d
-Hitbox	src/logic/collision.h	/^typedef struct Hitbox {$/;"	s
+Hitbox	src/logic/collision.h	/^typedef struct Hitbox $/;"	s
 Hitbox	src/logic/collision.h	/^} Hitbox;$/;"	t	typeref:struct:Hitbox
 LEFT	src/logic/collision.h	/^	LEFT = 1,$/;"	e	enum:SIDE
 MAP_H	src/objects/map.h	/^#define MAP_H$/;"	d
 MAP_HEIGHT	src/objects/map.c	/^#define MAP_HEIGHT /;"	d	file:
 MAP_LENGTH	src/objects/map.c	/^#define MAP_LENGTH /;"	d	file:
+MAX_WALLS	src/objects/walls.h	/^#define MAX_WALLS /;"	d
 NO_SIDE	src/logic/collision.h	/^	NO_SIDE = 0,$/;"	e	enum:SIDE
 NUM_BALLS	src/objects/ball.c	/^#define NUM_BALLS /;"	d	file:
 NUM_OBJS	src/objects/objects.h	/^#define NUM_OBJS /;"	d
@@ -53,8 +56,11 @@ VECTOR_H	src/logic/vector.h	/^#define VECTOR_H$/;"	d
 Vector2	src/logic/vector.h	/^typedef struct Vector2 $/;"	s
 Vector2	src/logic/vector.h	/^} Vector2;$/;"	t	typeref:struct:Vector2
 WALLS_H	src/objects/walls.h	/^#define WALLS_H$/;"	d
+Walls	src/objects/walls.h	/^typedef struct Walls$/;"	s
+Walls	src/objects/walls.h	/^} Walls;$/;"	t	typeref:struct:Walls
 __anone693807f0108	src/main/ui.c	/^{$/;"	s	file:
 __anone693807f0208	src/main/ui.c	/^	{$/;"	s	struct:__anone693807f0108	file:
+amount	src/objects/walls.h	/^	int amount;$/;"	m	struct:Walls	typeref:typename:int
 apply_friction	src/logic/physics.c	/^void apply_friction(Vector2* vel, double friction)$/;"	f	typeref:typename:void
 apply_velocity	src/logic/physics.c	/^void apply_velocity(Hitbox* hb, Vector2 vel)$/;"	f	typeref:typename:void
 ball_handle_collisions	src/objects/ball.c	/^void ball_handle_collisions(Ball* b)$/;"	f	typeref:typename:void
@@ -69,6 +75,7 @@ check_null	src/error/error.c	/^void check_null(void* val, char* msg)$/;"	f	typer
 check_player_wins	src/main/ui.c	/^int check_player_wins()$/;"	f	typeref:typename:int
 close_stuff	src/main/main.c	/^void close_stuff(SDL_Window* window, SDL_Renderer* renderer)$/;"	f	typeref:typename:void
 collides	src/logic/collision.c	/^bool collides(Hitbox a, Hitbox b)$/;"	f	typeref:typename:bool
+collides_on_side	src/logic/collision.c	/^SIDE collides_on_side(Hitbox recta, Hitbox recta_prev, Hitbox rectb, Hitbox rectb_prev)$/;"	f	typeref:typename:SIDE
 collides_with_bottom_edge	src/logic/collision.c	/^bool collides_with_bottom_edge(Hitbox hb)$/;"	f	typeref:typename:bool
 collides_with_edge	src/logic/collision.c	/^bool collides_with_edge(Hitbox hb)$/;"	f	typeref:typename:bool
 collides_with_left_edge	src/logic/collision.c	/^bool collides_with_left_edge(Hitbox hb)$/;"	f	typeref:typename:bool
@@ -77,8 +84,7 @@ collides_with_player	src/objects/player.c	/^bool collides_with_player(Hitbox hb,
 collides_with_right_edge	src/logic/collision.c	/^bool collides_with_right_edge(Hitbox hb)$/;"	f	typeref:typename:bool
 collides_with_top_edge	src/logic/collision.c	/^bool collides_with_top_edge(Hitbox hb)$/;"	f	typeref:typename:bool
 collides_with_wall	src/objects/walls.c	/^bool collides_with_wall(Hitbox hb, Obj** wall)$/;"	f	typeref:typename:bool
-contact	src/logic/collision.h	/^struct contact$/;"	s
-contact	src/logic/collision.h	/^} contact;$/;"	v	typeref:struct:contact
+contact	src/objects/player.h	/^	Contact contact;$/;"	m	struct:Player	typeref:typename:Contact
 dir	src/objects/player.h	/^	double dir;$/;"	m	struct:Player	typeref:typename:double
 draw_balls	src/objects/ball.c	/^void draw_balls(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
 draw_obj	src/objects/objects.c	/^void draw_obj(SDL_Renderer* renderer, Obj obj)$/;"	f	typeref:typename:void
@@ -91,17 +97,18 @@ draw_walls	src/objects/walls.c	/^void draw_walls(SDL_Renderer* renderer)$/;"	f	t
 font	src/main/ui.c	/^	TTF_Font* font;$/;"	m	struct:__anone693807f0108	typeref:typename:TTF_Font *	file:
 generate_map	src/objects/map.c	/^Obj* generate_map(int map[])$/;"	f	typeref:typename:Obj *
 get_balls	src/objects/ball.c	/^Ball* get_balls()$/;"	f	typeref:typename:Ball *
+get_contact	src/logic/collision.c	/^Contact get_contact(Hitbox hb, Hitbox hb_prev, Hitbox hbs[], Hitbox hbs_prev[], size_t len)$/;"	f	typeref:typename:Contact
 get_mid_point	src/main/common.c	/^int get_mid_point(int a, int b)$/;"	f	typeref:typename:int
 get_midpoint	src/logic/vector.c	/^Vector2 get_midpoint(SDL_Rect r)$/;"	f	typeref:typename:Vector2
 get_player1	src/objects/player.c	/^Player* get_player1()$/;"	f	typeref:typename:Player *
 get_player2	src/objects/player.c	/^Player* get_player2()$/;"	f	typeref:typename:Player *
 get_players	src/objects/player.c	/^Player* get_players()$/;"	f	typeref:typename:Player *
-get_walls	src/objects/walls.c	/^Obj* get_walls()$/;"	f	typeref:typename:Obj *
 handle_player_input	src/objects/player.c	/^void handle_player_input(Player* p)$/;"	f	typeref:typename:void
-hb	src/logic/collision.h	/^	Hitbox hb; $/;"	m	struct:contact	typeref:typename:Hitbox
+hb	src/logic/collision.h	/^	Hitbox hb; \/\/ hitbox that the player collided with$/;"	m	struct:Contact	typeref:typename:Hitbox
 hb	src/objects/ball.h	/^	Hitbox hb;$/;"	m	struct:Ball	typeref:typename:Hitbox
 hb	src/objects/objects.h	/^	Hitbox hb;$/;"	m	struct:Obj	typeref:typename:Hitbox
 hb	src/objects/player.h	/^	Hitbox hb;$/;"	m	struct:Player	typeref:typename:Hitbox
+hb	src/objects/walls.h	/^	Hitbox hb[];$/;"	m	struct:Walls	typeref:typename:Hitbox[]
 hitbox_to_SDLRect	src/logic/collision.c	/^SDL_Rect hitbox_to_SDLRect(Hitbox hb)$/;"	f	typeref:typename:SDL_Rect
 increment_p1_score	src/main/ui.c	/^void increment_p1_score()$/;"	f	typeref:typename:void
 increment_p2_score	src/main/ui.c	/^void increment_p2_score()$/;"	f	typeref:typename:void
@@ -112,7 +119,7 @@ init_players	src/objects/player.c	/^void init_players(SDL_Renderer* renderer)$/;
 init_ray	src/logic/ray.c	/^Ray init_ray(double x1, double y1, double x2, double y2)$/;"	f	typeref:typename:Ray
 init_score	src/main/ui.c	/^void init_score(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
 init_ui	src/main/ui.c	/^void init_ui(SDL_Renderer* renderer)$/;"	f	typeref:typename:void
-init_walls	src/objects/walls.c	/^void init_walls(int amount)$/;"	f	typeref:typename:void
+init_walls	src/objects/walls.c	/^Walls init_walls(int amount)$/;"	f	typeref:typename:Walls
 left	src/logic/collision.h	/^	int left;$/;"	m	struct:Hitbox	typeref:typename:int
 limit_velocity	src/logic/physics.c	/^void limit_velocity(Vector2* vel, double limit)$/;"	f	typeref:typename:void
 logo	src/main/ui.c	/^	SDL_Texture* logo;$/;"	m	struct:__anone693807f0108	typeref:typename:SDL_Texture *	file:
@@ -148,12 +155,12 @@ quit	src/main/main.c	/^bool quit()$/;"	f	typeref:typename:bool
 rays	src/objects/player.c	/^static Ray rays[1];$/;"	v	typeref:typename:Ray[1]	file:
 rays_intersect	src/logic/ray.c	/^bool rays_intersect(Ray r1, Ray r2)$/;"	f	typeref:typename:bool
 renderer	src/main/ui.c	/^	SDL_Renderer* renderer;$/;"	m	struct:__anone693807f0108	typeref:typename:SDL_Renderer *	file:
-resolve_collision	src/logic/collision.c	/^SIDE resolve_collision(Vector2* apos, Hitbox* recta, Hitbox recta_prev, Hitbox rectb, Hitbox rec/;"	f	typeref:typename:SIDE
+resolve_collision	src/logic/collision.c	/^void resolve_collision(Vector2* apos, Hitbox recta, Hitbox rectb, SIDE side)$/;"	f	typeref:typename:void
 resolve_edge_collision	src/logic/collision.c	/^SIDE resolve_edge_collision(Vector2* pos, Hitbox* hb)$/;"	f	typeref:typename:SIDE
 right	src/logic/collision.h	/^	int right;$/;"	m	struct:Hitbox	typeref:typename:int
 score	src/main/ui.c	/^	} score;$/;"	m	struct:__anone693807f0108	typeref:struct:__anone693807f0108::__anone693807f0208	file:
 set_hitbox	src/logic/collision.c	/^void set_hitbox(Hitbox* hb, int x, int y)$/;"	f	typeref:typename:void
-side	src/logic/collision.h	/^	SIDE side; $/;"	m	struct:contact	typeref:typename:SIDE
+side	src/logic/collision.h	/^	SIDE side; \/\/ which side did it collide from (NONE if no collision occured)$/;"	m	struct:Contact	typeref:typename:SIDE
 texture	src/objects/ball.h	/^	SDL_Texture* texture;$/;"	m	struct:Ball	typeref:typename:SDL_Texture *
 texture	src/objects/objects.h	/^	SDL_Texture* texture;$/;"	m	struct:Obj	typeref:typename:SDL_Texture *
 texture	src/objects/player.h	/^	SDL_Texture* texture;$/;"	m	struct:Player	typeref:typename:SDL_Texture *
@@ -175,7 +182,6 @@ vector_set_magnitude	src/logic/vector.c	/^Vector2 vector_set_magnitude(Vector2 v
 vector_sub	src/logic/vector.c	/^Vector2 vector_sub(Vector2 v1, Vector2 v2)$/;"	f	typeref:typename:Vector2
 vel	src/objects/ball.h	/^	Vector2 vel;$/;"	m	struct:Ball	typeref:typename:Vector2
 vel	src/objects/player.h	/^	Vector2 vel;$/;"	m	struct:Player	typeref:typename:Vector2
-walls	src/objects/walls.c	/^static Obj* walls = NULL;$/;"	v	typeref:typename:Obj *	file:
 wins_pos	src/main/ui.c	/^		SDL_Rect wins_pos;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:SDL_Rect	file:
 wins_text	src/main/ui.c	/^		char wins_text[32];$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:char[32]	file:
 wins_texture	src/main/ui.c	/^		SDL_Texture* wins_texture;$/;"	m	struct:__anone693807f0108::__anone693807f0208	typeref:typename:SDL_Texture *	file:

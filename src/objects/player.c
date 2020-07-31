@@ -34,9 +34,16 @@ void init_players(SDL_Renderer* renderer)
 {
 	SDL_Surface* surface = SDL_LoadBMP("assets/player.bmp");
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+	players[0] = (Player){
+		.pos     = (Vector2){100, 100},
+		.hb      = init_hitbox(100, 100, 10, 10),
+		.prev_hb = init_hitbox(100, 100, 10, 10),
+		.contact = {
+			.side = NO_SIDE,
+			.hb = init_hitbox(0, 0, 0, 0),
+		}
+	};
 
-	players[0].pos = (Vector2){10, 10};
-   	players[0].hb  = init_hitbox(0, 0, 10, 10);
 	rays[0] = init_ray(0, 0, 0, 0);
 
 	for (int i = 0; i < NUM_PLAYERS; i++)
@@ -70,7 +77,6 @@ void update_player(Player* p)
 
 	player_handle_collisions(p);
 	apply_friction(&p->vel, PLAYER_FRICTION);
-	printf("dir: %lf\n", p->dir);
 }
 
 void player_add_velocity(Player* p, double magnitude)
@@ -95,16 +101,22 @@ void handle_player_input(Player* p)
 
 void player_handle_collisions(Player* p)
 {
-	Obj* wall;
 	Vector2 zero_vel = (Vector2){0.0, 0.0};
-	if (collides_with_wall(p->hb, &wall))
+	if (p->contact.side != NO_SIDE)
 	{
-		SIDE side = resolve_collision(&p->pos, &p->hb, p->prev_hb, wall->hb, wall->hb);
+		p->vel.x = 0;
+		p->vel.y = 0;
+		SIDE side = p->contact.side;
 		if (side == LEFT || side == RIGHT)
 			p->vel.x = 0;
 		else if (side == TOP || side == BOTTOM)
 			p->vel.y = 0;
+		resolve_collision(&p->pos, p->hb, p->contact.hb, side);
+		print_hitbox(p->hb, "Player");
+		print_hitbox(p->contact.hb, "Wall");
+		printf("x: %lf y: %lf\n", p->pos.x, p->pos.y);
 	}
+	p->contact.side = NO_SIDE;
 
 	if (collides_with_edge(p->hb))
 	{
