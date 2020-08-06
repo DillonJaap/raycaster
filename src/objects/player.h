@@ -14,9 +14,9 @@ typedef struct Player
 
 	Hitbox hb;
 	Hitbox prev_hb;
+	SDL_Texture* texture;
 	Contact contact;
 
-	SDL_Texture* texture;
 } Player;
 
 Player* get_players();

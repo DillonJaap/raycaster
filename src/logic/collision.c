@@ -63,19 +63,21 @@ bool collides(Hitbox a, Hitbox b)
 	return true;
 }
 
-Contact get_contact(Hitbox hb, Hitbox hb_prev, Hitbox hbs[], Hitbox hbs_prev[], size_t len)
+void get_contacts(Hitbox hb, Hitbox hb_prev, Hitbox hbs[], Hitbox hbs_prev[], Contact contacts[], size_t len)
 {
 	SIDE side = NO_SIDE;
+	int idx = 0;
 	for (int i = 0; i < len; i++)
 	{
 		side = collides_on_side(hb, hb_prev, hbs[i], hbs_prev[i]);
 		if (side != NO_SIDE) 
 		{
 			printf("side: %d\n", side);
-			return (Contact){side, hbs[i]};
+			contacts[idx] = (Contact){side, hbs[i]};
+			idx++;
 		}
 	}
-	return (Contact){NO_SIDE, {0, 0, 0, 0}};
+	contacts[idx] = (Contact){NO_SIDE, {0, 0, 0, 0}};
 }
 
 SIDE collides_on_side(Hitbox hba, Hitbox hba_prev, Hitbox hbb, Hitbox hbb_prev)

@@ -124,7 +124,7 @@ int main(int argc, char** argv)
 		// handle collisions
 		{
 			// TODO: remove magic number
-			p1->contact = get_contact(p1->hb, p1->prev_hb, walls->hbs, walls->hbs, 100); 
+			get_contacts(p1->hb, p1->prev_hb, walls->hbs, walls->hbs, 100); 
 		}
 
 
